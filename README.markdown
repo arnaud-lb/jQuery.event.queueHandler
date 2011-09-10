@@ -1,9 +1,8 @@
-
 jQuery plugin to queue a function to be ran after the current event's handlers have been ran.
 
 ### API
 
-- event.queue(callback): queue a function to be ran after the current event's handlers have been ran
+- event.queueHandler(callback): queue a function to be ran after the current event's handlers have been ran
 
 ### Usecase
 
@@ -35,7 +34,7 @@ Solution: queue a function to be ran just after other event handlers:
 
 ``` javascript
 $(document).delegate('a[rel="external"]', 'click', function(event) {
-    event.queue(function() {
+    event.queueHandler(function() {
         if (event.isImmediatePropagationStopped()) return;
         window.open(this.href);
     });
